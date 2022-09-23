@@ -7,7 +7,7 @@ DO NOT USE THIS CODE IN YOUR PRODUCTION.
 import (
 	"bufio"
 	"fmt"
-	"github.com/shkh/lastfm-go/lastfm"
+	"github.com/shkh/lastfm-go"
 	"io"
 	"log"
 	"net/http"
@@ -32,7 +32,7 @@ const ShowPage = `
 </html>
 `
 
-var api *lastfm.Api
+var api *lastfm_go.Api
 
 func init() {
 	fmt.Print("API KEY:")
@@ -43,7 +43,7 @@ func init() {
 	apiSecret, _ := inputReader.ReadString('\n')
 	apiSecret = strings.Trim(apiSecret, "\r\n")
 
-	api = lastfm.New(apiKey, apiSecret)
+	api = lastfm_go.New(apiKey, apiSecret)
 }
 
 func rootHandler(writer http.ResponseWriter, request *http.Request) {

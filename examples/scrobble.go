@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/shkh/lastfm-go/lastfm"
+	"github.com/shkh/lastfm-go"
 	"os"
 	"strings"
 	"time"
@@ -21,7 +21,7 @@ func main() {
 	apiKey := getTrimmedString(r, "API KEY")
 	apiSecret := getTrimmedString(r, "API SECRET")
 
-	api := lastfm.New(apiKey, apiSecret)
+	api := lastfm_go.New(apiKey, apiSecret)
 
 	username := getTrimmedString(r, "Username")
 	password := getTrimmedString(r, "Password")
@@ -35,7 +35,7 @@ func main() {
 	artist := getTrimmedString(r, "Artist")
 	track := getTrimmedString(r, "Track")
 
-	p := lastfm.P{"artist": artist, "track": track}
+	p := lastfm_go.P{"artist": artist, "track": track}
 	_, err = api.Track.UpdateNowPlaying(p)
 	if err != nil {
 		fmt.Println(err)

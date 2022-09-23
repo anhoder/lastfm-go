@@ -1,4 +1,4 @@
-package lastfm
+package lastfm_go
 
 import (
 	"fmt"

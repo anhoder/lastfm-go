@@ -1,20 +1,20 @@
-package lastfm
+package lastfm_go
 
 ////////////
 // auth.x //
 ////////////
 
-//auth.getMobileSession
+// auth.getMobileSession
 type AuthGetMobileSession struct {
 	Name       string `xml:"name"` //username
 	Key        string `xml:"key"`  //session key
 	Subscriber bool   `xml:"subscriber"`
 }
 
-//auth.getToken
+// auth.getToken
 type AuthGetToken struct {
 	Token string `xml:",chardata"`
 }
 
-//auth.getSession
+// auth.getSession
 type AuthGetSession AuthGetMobileSession

@@ -1,4 +1,4 @@
-package lastfm
+package lastfm_go
 
 const (
 	UriApiSecBase  = "https://ws.audioscrobbler.com/2.0/"
@@ -9,15 +9,15 @@ const (
 type P map[string]interface{}
 
 type Api struct {
-	params      *apiParams
-	Album       *albumApi
-	Artist      *artistApi
-	Chart       *chartApi
-	Geo         *geoApi
-	Library     *libraryApi
-	Tag         *tagApi
-	Track       *trackApi
-	User        *userApi
+	params  *apiParams
+	Album   *albumApi
+	Artist  *artistApi
+	Chart   *chartApi
+	Geo     *geoApi
+	Library *libraryApi
+	Tag     *tagApi
+	Track   *trackApi
+	User    *userApi
 }
 
 type apiParams struct {
@@ -30,15 +30,15 @@ type apiParams struct {
 func New(key, secret string) (api *Api) {
 	params := apiParams{key, secret, "", ""}
 	api = &Api{
-		params:      &params,
-		Album:       &albumApi{&params},
-		Artist:      &artistApi{&params},
-		Chart:       &chartApi{&params},
-		Geo:         &geoApi{&params},
-		Library:     &libraryApi{&params},
-		Tag:         &tagApi{&params},
-		Track:       &trackApi{&params},
-		User:        &userApi{&params},
+		params:  &params,
+		Album:   &albumApi{&params},
+		Artist:  &artistApi{&params},
+		Chart:   &chartApi{&params},
+		Geo:     &geoApi{&params},
+		Library: &libraryApi{&params},
+		Tag:     &tagApi{&params},
+		Track:   &trackApi{&params},
+		User:    &userApi{&params},
 	}
 	return
 }

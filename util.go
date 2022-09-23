@@ -1,4 +1,4 @@
-package lastfm
+package lastfm_go
 
 import (
 	"crypto/md5"
@@ -211,9 +211,9 @@ func formatArgs(args, rules P) (result map[string]string, err error) {
 	return
 }
 
-/////////////
+// ///////////
 // GET API //
-/////////////
+// ///////////
 func callGet(apiMethod string, params *apiParams, args map[string]interface{}, result interface{}, rules P) (err error) {
 	urlParams := url.Values{}
 	urlParams.Add("method", apiMethod)
@@ -254,9 +254,9 @@ func callGet(apiMethod string, params *apiParams, args map[string]interface{}, r
 	return
 }
 
-//////////////
+// ////////////
 // POST API //
-//////////////
+// ////////////
 func callPost(apiMethod string, params *apiParams, args P, result interface{}, rules P) (err error) {
 	if err = requireAuth(params); err != nil {
 		return
