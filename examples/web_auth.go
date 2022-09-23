@@ -5,9 +5,9 @@ DO NOT USE THIS CODE IN YOUR PRODUCTION.
 */
 
 import (
-	"../lastfm"
 	"bufio"
 	"fmt"
+	"github.com/shkh/lastfm-go/lastfm"
 	"io"
 	"log"
 	"net/http"

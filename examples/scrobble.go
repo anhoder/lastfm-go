@@ -1,9 +1,9 @@
 package main
 
 import (
-	"../lastfm"
 	"bufio"
 	"fmt"
+	"github.com/shkh/lastfm-go/lastfm"
 	"os"
 	"strings"
 	"time"
